@@ -322,12 +322,12 @@ html.introing,html.introing body{overflow:hidden}
 .intro-l i{display:block;font-style:normal;transform:translateY(115%);animation:letter 1s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes letter{to{transform:none}}
 .intro-tag{font-size:clamp(12px,1.6vw,16px);letter-spacing:.28em;text-transform:uppercase;color:#a3a3a3;opacity:0;animation:fade .9s ease 1.1s forwards}
-.intro-foot{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(12px,3vw,32px);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a3a3a3}
+.intro-foot{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:clamp(12px,3vw,32px);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a3a3a3}
 .intro-count{font-variant-numeric:tabular-nums;color:var(--white)}
 .intro-line{position:relative;height:1px;background:#2b2b2b;overflow:hidden}
 .intro-line b{position:absolute;inset:0;background:var(--white);transform:scaleX(0);transform-origin:left;animation:fill 2.3s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes fill{to{transform:scaleX(1)}}
-@media(max-width:600px){.intro-year{display:none}.intro-foot{grid-template-columns:auto 1fr}}
+
 
 /* Landing: hero entrance plays only once, as the intro lifts */
 .landing .hero-copy>*{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
@@ -410,3 +410,8 @@ html.locked,html.locked body{overflow:hidden}
 .cs-ig{margin-top:12px}
 .cs-msg a{text-decoration:underline;text-underline-offset:3px}
 .news .btn{margin-top:26px}
+
+/* tagline: quiet everywhere except the loader */
+.tagline{font-size:10.5px;letter-spacing:.26em;font-weight:400;text-transform:uppercase;color:var(--g4)}
+.hero-tag.tagline{color:var(--g4)}
+.site-footer .tagline{display:block;color:#7a7a7a;margin-bottom:12px}

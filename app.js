@@ -6,7 +6,7 @@ const CONFIG = {
   announce: 'Free shipping across India on orders above ₹799',
   comingSoon: true,   // true = Coming Soon page after the loader (add #preview to the URL to see the store). false = open the store.
   freeShipOver: 799,
-  contact: { email:'wecare@subtl.co.in', phone:'+91 9395329710', city:'Jorhat, Assam', address:'Kabrastan Road, Rajamaidan, Jorhat, Assam 785001' },
+  contact: { city:'Jorhat, Assam', address:'Kabrastan Road, Rajamaidan, Jorhat, Assam 785001' },
   social: { instagram:'https://instagram.com/subtl.co.in/', x:'http://www.twitter.com/Subtl_official', pinterest:'https://www.pinterest.com/Subtl_official' },
   policyBase: 'https://subtlclothing.wixsite.com/subtle'
 };
@@ -106,7 +106,7 @@ function chrome(){
     <footer class="site-footer"><div class="wrap">
       <div class="foot-grid">
         <div><div class="logo">${CONFIG.brand}</div>
-          <p style="color:#9a9a9a;max-width:300px;font-size:14px">${CONFIG.tagline}. Where minimalism meets timeless elegance.</p></div>
+          <span class="tagline">${CONFIG.tagline}</span><p style="color:#9a9a9a;max-width:300px;font-size:14px">Where minimalism meets timeless elegance.</p></div>
         <div><h4>Shop</h4><ul>
           <li><a href="#shop">All products</a></li>
           ${Object.keys(CATS).map(k=>`<li><a href="#shop-${k}">${CATS[k]}</a></li>`).join('')}</ul></div>
@@ -116,7 +116,7 @@ function chrome(){
         <div><h4>Follow</h4><ul>
           <li><a href="${CONFIG.social.instagram}" target="_blank" rel="noopener">Instagram</a></li><li><a href="${CONFIG.social.x}" target="_blank" rel="noopener">X</a></li><li><a href="${CONFIG.social.pinterest}" target="_blank" rel="noopener">Pinterest</a></li></ul></div>
       </div>
-      <div class="foot-bottom"><span>© 2026 ${CONFIG.brand} · ${CONFIG.tagline}. Concept project.</span><span><a href="${CONFIG.policyBase}/store-policy" target="_blank" rel="noopener">Privacy</a> · <a href="${CONFIG.policyBase}/terms-conditions" target="_blank" rel="noopener">Terms</a></span></div>
+      <div class="foot-bottom"><span>© 2026 ${CONFIG.brand}. Concept project.</span><span><a href="${CONFIG.policyBase}/store-policy" target="_blank" rel="noopener">Privacy</a> · <a href="${CONFIG.policyBase}/terms-conditions" target="_blank" rel="noopener">Terms</a></span></div>
     </div></footer>`);
   const nl=$('#navLinks'), mb=$('#menuBtn'), mt=$('#menuTxt');
   const setMenu=o=>{ nl.classList.toggle('open',o); mb.setAttribute('aria-expanded',o); mt.textContent=o?'Close':'Menu'; };
@@ -155,7 +155,7 @@ Views.home = () => ({
   html: `
 <section class="hero">
   <div class="hero-copy">
-    <span class="label">Design &amp; Fashion · Collection 01</span>
+    <span class="tagline">Design &amp; Fashion · Collection 01</span>
     <h1>Minimalism<br>maximized.</h1>
     <div class="hero-bottom">
       <p>Where minimalism meets timeless elegance. Heavyweight oversized tees and minimal hoodies, made for those who appreciate the beauty of simplicity.</p>
@@ -164,7 +164,7 @@ Views.home = () => ({
   </div>
   <div class="hero-media">
     <div class="ph dark" data-label="Hero image"></div>
-    <span class="hero-tag label">Design &amp; Fashion</span>
+    <span class="hero-tag tagline">Design &amp; Fashion</span>
   </div>
 </section>
 
@@ -211,7 +211,7 @@ Views.home = () => ({
   <div class="perk"><b>Free shipping</b><p>Across India on orders above ₹799.</p></div>
   <div class="perk"><b>7-day returns</b><p>Unused items with tags attached.</p></div>
   <div class="perk"><b>Heavyweight fabric</b><p>210 GSM terry cotton, 400 GSM fleece.</p></div>
-  <div class="perk"><b>Support</b><p>${CONFIG.contact.email}</p></div>
+  <div class="perk"><b>Support</b><p>Message us on Instagram.</p></div>
 </div></div>
 
 <section class="news rv">
@@ -463,14 +463,12 @@ const INFO = {
     ['Tracking', 'A shipping confirmation email with a tracking number is sent once your order ships.'],
     ['Taxes and duties', 'Any customs duties, taxes or import fees are the customer\'s responsibility, if applicable.'],
     ['Returns', 'Start a return within 7 days of delivery for a full refund or an exchange. Items must be new and unused, with all tags and labels attached. Worn, washed or altered items are not eligible.'],
-    ['How to return', 'Contact us by phone or email with your order number and reason for return. You will receive a return label and instructions; return shipping is paid by you.'],
+    ['How to return', 'Message us on Instagram with your order number and reason for return. You will receive a return label and instructions; return shipping is paid by you.'],
     ['Refunds and exchanges', 'Refunds are processed within 10 business days of inspection, to the original payment method. Exchanges ship within 3 business days of receiving the returned item.'],
     ['Lost or damaged', 'Contact customer support as soon as possible. Changes to an order are not always possible after it is placed.'] ] },
   payments: { t:'Payment methods', h:'Payment methods.', rows:[
     ['We accept', 'Google Pay, PayPal, credit card, debit card, UPI and net banking.'] ] },
   contact:  { t:'Contact', h:'Get in touch.', rows:[
-    ['Email', '<a href="mailto:' + CONFIG.contact.email + '">' + CONFIG.contact.email + '</a>'],
-    ['Phone', CONFIG.contact.phone],
     ['Address', CONFIG.contact.address],
     ['Follow', '<a href="' + CONFIG.social.instagram + '" target="_blank" rel="noopener">Instagram</a> · <a href="' + CONFIG.social.x + '" target="_blank" rel="noopener">X</a> · <a href="' + CONFIG.social.pinterest + '" target="_blank" rel="noopener">Pinterest</a>'] ] }
 };
@@ -700,7 +698,6 @@ function intro(){
     <div class="intro-foot">
       <span class="intro-count" id="introCount">000</span>
       <span class="intro-line"><b></b></span>
-      <span class="intro-year">Concept store · 2026</span>
     </div>`;
   document.body.prepend(el);
   if(calm()){ el.remove(); return; }
@@ -749,14 +746,13 @@ function comingSoon(){
     </div></header>
 
     <div class="wrap cs-main">
-      <span class="label muted cs-fade">Design &amp; Fashion · Collection 01</span>
+      <span class="tagline cs-fade">Design &amp; Fashion · Collection 01</span>
       <h1 class="cs-h"><span class="cs-line"><span>Coming</span></span><span class="cs-line"><span>soon.</span></span></h1>
       <div class="cs-row cs-fade">
         <p class="cs-copy">Where minimalism meets timeless elegance. Oversized solids, imprints and heavyweight hoodies, designed in ${CONFIG.contact.city}.</p>
         <div class="cs-form">
           <span class="label">Follow the launch</span>
           <a class="btn block cs-ig" href="${CONFIG.social.instagram}" target="_blank" rel="noopener">Follow on Instagram</a>
-          <p class="cs-msg">Questions? <a href="mailto:${CONFIG.contact.email}">${CONFIG.contact.email}</a></p>
         </div>
       </div>
     </div>
