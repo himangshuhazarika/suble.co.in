@@ -1,28 +1,40 @@
-/* Subtl — single-page store. Placeholder content; edit CONFIG + PRODUCTS only. */
+/* Subtl — Design & Fashion. Single-page store. Content taken from the original Subtl store. */
 const CONFIG = {
   brand: 'Subtl',
-  currency: '₹',          // placeholder — change later
-  announce: 'Lorem ipsum dolor sit amet — free shipping over 0000',
-  tagline: 'Lorem ipsum, quietly made.',   // placeholder tagline
-  comingSoon: true,   // true = show the Coming Soon page after the loader. false = open the full store.
-  freeShipOver: 3000,
-  shipFlat: 99
+  currency: '₹',
+  tagline: 'Design & Fashion',
+  announce: 'Free shipping across India on orders above ₹799',
+  comingSoon: true,   // true = Coming Soon page after the loader (add #preview to the URL to see the store). false = open the store.
+  freeShipOver: 799,
+  contact: { email:'wecare@subtl.co.in', phone:'+91 9395329710', city:'Jorhat, Assam', address:'Kabrastan Road, Rajamaidan, Jorhat, Assam 785001' },
+  social: { instagram:'https://instagram.com/subtl.co.in/', x:'http://www.twitter.com/Subtl_official', pinterest:'https://www.pinterest.com/Subtl_official' },
+  policyBase: 'https://subtlclothing.wixsite.com/subtle'
 };
 
+const HOOD = 'Premium heavyweight minimal hoodie in poly-cotton fleece with a crease line on the body and sleeves, side pockets, a Subtl tag and eyelets on the hood, ribbed cuffs and hem, and a soft brushed inside.';
 const PRODUCTS = [
-  { id:1,  name:'Lorem Ipsum Tee',      cat:'Topwear',    price:1490, was:null, tone:'s1', tag:'New',  colors:['#0a0a0a','#ffffff','#a3a3a3'] },
-  { id:2,  name:'Dolor Sit Tee',        cat:'Topwear',    price:1490, was:null, tone:'s2', tag:'',     colors:['#ffffff','#0a0a0a'] },
-  { id:3,  name:'Amet Hoodie',          cat:'Topwear',    price:2990, was:null, tone:'s3', tag:'',     colors:['#0a0a0a','#5c5c5c'] },
-  { id:4,  name:'Consectetur Crew',     cat:'Topwear',    price:2490, was:3290, tone:'s4', tag:'Sale', colors:['#e8e8e8','#0a0a0a'] },
-  { id:5,  name:'Adipiscing Pant',      cat:'Bottomwear', price:1790, was:null, tone:'s2', tag:'',     colors:['#0a0a0a','#5c5c5c','#e8e8e8'] },
-  { id:6,  name:'Elit Lounge Pant',     cat:'Bottomwear', price:1790, was:null, tone:'s1', tag:'New',  colors:['#0a0a0a','#a3a3a3'] },
-  { id:7,  name:'Sed Do Chino',         cat:'Bottomwear', price:2100, was:2800, tone:'s3', tag:'Sale', colors:['#ffffff','#0a0a0a'] },
-  { id:8,  name:'Eiusmod Short',        cat:'Bottomwear', price:1390, was:null, tone:'s4', tag:'',     colors:['#0a0a0a','#e8e8e8'] },
-  { id:9,  name:'Tempor Overshirt',     cat:'Outerwear',  price:3490, was:null, tone:'s2', tag:'',     colors:['#0a0a0a','#5c5c5c'] },
-  { id:10, name:'Incididunt Jacket',    cat:'Outerwear',  price:4990, was:null, tone:'s3', tag:'New',  colors:['#0a0a0a','#ffffff'] },
-  { id:11, name:'Labore Coach Jacket',  cat:'Outerwear',  price:4290, was:5290, tone:'s1', tag:'Sale', colors:['#a3a3a3','#0a0a0a'] },
-  { id:12, name:'Magna Zip Hoodie',     cat:'Outerwear',  price:3290, was:null, tone:'s4', tag:'',     colors:['#0a0a0a','#e8e8e8'] }
+  { id:1,  name:'Snow',                  cat:'Oversized Solids',    price:698,  was:998,  tone:'s2', tag:'', colors:[['Snow','#f2f2f2']],
+    desc:'A perfect blend of comfort and style. Timeless, versatile and easy to care for, this classic crew neck tee is a must-have addition to your collection.', fab:'100% terry cotton, 210 GSM. Solid, heavyweight, oversized fit.' },
+  { id:2,  name:'Sand',                  cat:'Oversized Solids',    price:698,  was:998,  tone:'s4', tag:'', colors:[['Sand','#d8c8a8']],
+    desc:'A blend of elegance and durability. Crafted with high-density fabric and premium stitching, this tee promises exceptional comfort and resilience.', fab:'100% French terry cotton, 210 GSM. Solid, heavyweight, oversized fit.' },
+  { id:3,  name:'The Dark',              cat:'Oversized Solids',    price:698,  was:998,  tone:'s1', tag:'', colors:[['Black','#0a0a0a']],
+    desc:'Solid dark oversized tee, suited to any weather. Wear it alone or under your favourite jacket, all year round.', fab:'100% French terry cotton, 210 GSM. Solid, heavyweight, oversized fit.' },
+  { id:4,  name:'Tinted Lavender',       cat:'Oversized Solids',    price:698,  was:998,  tone:'s3', tag:'', colors:[['Tinted Lavender','#cbbfe6']],
+    desc:'A unisex tee designed to fit both men and women. Soft and versatile, the perfect blend of style and breathability for a casual look.', fab:'100% terry cotton, 210 GSM. Unisex, oversized fit.' },
+  { id:5,  name:'Spectacular Sunset',    cat:'Imprinted Oversized', price:698,  was:998,  tone:'s3', tag:'', colors:[['Tinted Lavender','#cbbfe6']],
+    desc:'Tinted lavender with an aesthetic quote, made to make your day. Wear it solo or under your favourite jacket.', fab:'100% terry cotton, 210 GSM. Printed, heavyweight, oversized fit.' },
+  { id:6,  name:'Midnight Swim',         cat:'Imprinted Oversized', price:698,  was:998,  tone:'s1', tag:'', colors:[['Black','#0a0a0a']],
+    desc:'Crafted from 100% terry cotton with a minimalist mountain print, a soft texture and a versatile black.', fab:'100% terry cotton. Printed, heavyweight, oversized fit.' },
+  { id:7,  name:'Latenight Records',     cat:'Imprinted Oversized', price:698,  was:998,  tone:'s4', tag:'', colors:[['Sand','#d8c8a8']],
+    desc:'A timeless classic with a delicate, minimal leaf-green flower print. A canvas for a casual yet refined look, made with comfort and simplicity in mind.', fab:'Printed, heavyweight, oversized fit.' },
+  { id:8,  name:'Printed White T-Shirt', cat:'Imprinted Oversized', price:698,  was:998,  tone:'s2', tag:'', colors:[['Snow','#f2f2f2']],
+    desc:'InkSlick Fusion. An oversized tee with a minimalist ink print, a soft texture and a versatile colour, for people who appreciate the great outdoors.', fab:'100% terry cotton, 210 GSM, heavy stitching. Printed, oversized fit.' },
+  { id:9,  name:'Black Hoodie',          cat:'Minimal Hoodies',     price:1350, was:1650, tone:'s1', tag:'', colors:[['Black','#0a0a0a']],      desc:HOOD, fab:'Poly-cotton fleece, 400 GSM. Soft brushed inside.' },
+  { id:10, name:'Soft Beige Hoodie',     cat:'Minimal Hoodies',     price:1350, was:1650, tone:'s4', tag:'', colors:[['Soft Beige','#d9ccb6']], desc:HOOD, fab:'Poly-cotton fleece, 400 GSM. Soft brushed inside.' },
+  { id:11, name:'Muted Grey Hoodie',     cat:'Minimal Hoodies',     price:1350, was:1650, tone:'s3', tag:'', colors:[['Muted Grey','#8d8d8d']], desc:HOOD, fab:'Poly-cotton fleece, 400 GSM. Soft brushed inside.' },
+  { id:12, name:'Lilac Hoodie',          cat:'Minimal Hoodies',     price:1350, was:1650, tone:'s2', tag:'', colors:[['Lilac','#c4b3e0']],      desc:HOOD, fab:'Poly-cotton fleece, 400 GSM. Soft brushed inside.' }
 ];
+const shipTxt = sh => sh===0 ? 'Free' : 'Calculated at checkout';
 
 const $ = (s, el=document) => el.querySelector(s);
 const $$ = (s, el=document) => [...el.querySelectorAll(s)];
@@ -51,7 +63,7 @@ const Cart = {
   clear(){ this.set([]); },
   count(){ return this.get().reduce((a,i)=>a+i.qty,0); },
   subtotal(){ return this.get().reduce((a,i)=>a+byId(i.id).price*i.qty,0); },
-  shipping(){ const s=this.subtotal(); return s===0 ? 0 : (s>=CONFIG.freeShipOver ? 0 : CONFIG.shipFlat); }
+  shipping(){ const s=this.subtotal(); return s===0 ? 0 : (s>=CONFIG.freeShipOver ? 0 : null); }   /* null = calculated at checkout */
 };
 let _last = null;
 function updateCount(){
@@ -78,10 +90,10 @@ function chrome(){
     <header class="site-header"><div class="wrap nav">
       <nav class="nav-links" id="navLinks">
         <a href="#shop">Shop all</a>
-        <a href="#shop-topwear">Topwear</a>
-        <a href="#shop-bottomwear">Bottomwear</a>
-        <a href="#shop-outerwear">Outerwear</a>
-        <a href="#shop-sale">Sale</a>
+        <a href="#shop-solids">Solids</a>
+        <a href="#shop-imprinted">Imprinted</a>
+        <a href="#shop-hoodies">Hoodies</a>
+        <a href="#about">About</a>
       </nav>
       <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span class="menu-ico"></span><span id="menuTxt">Menu</span></button>
       <a href="#home" class="logo" aria-label="${CONFIG.brand} home">${CONFIG.brand}</a>
@@ -94,19 +106,17 @@ function chrome(){
     <footer class="site-footer"><div class="wrap">
       <div class="foot-grid">
         <div><div class="logo">${CONFIG.brand}</div>
-          <p style="color:#9a9a9a;max-width:300px;font-size:14px">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p></div>
+          <p style="color:#9a9a9a;max-width:300px;font-size:14px">${CONFIG.tagline}. Where minimalism meets timeless elegance.</p></div>
         <div><h4>Shop</h4><ul>
           <li><a href="#shop">All products</a></li>
-          <li><a href="#shop-topwear">Topwear</a></li>
-          <li><a href="#shop-bottomwear">Bottomwear</a></li>
-          <li><a href="#shop-outerwear">Outerwear</a></li></ul></div>
+          ${Object.keys(CATS).map(k=>`<li><a href="#shop-${k}">${CATS[k]}</a></li>`).join('')}</ul></div>
         <div><h4>Help</h4><ul>
-          <li><a href="#home">Shipping &amp; returns</a></li><li><a href="#home">Size guide</a></li>
-          <li><a href="#home">Contact</a></li><li><a href="#home">FAQ</a></li></ul></div>
+          <li><a href="#shipping">Shipping &amp; returns</a></li><li><a href="#payments">Payment methods</a></li>
+          <li><a href="#contact">Contact</a></li><li><a href="#about">About</a></li></ul></div>
         <div><h4>Follow</h4><ul>
-          <li><a href="#home">Instagram</a></li><li><a href="#home">Pinterest</a></li><li><a href="#home">YouTube</a></li></ul></div>
+          <li><a href="${CONFIG.social.instagram}" target="_blank" rel="noopener">Instagram</a></li><li><a href="${CONFIG.social.x}" target="_blank" rel="noopener">X</a></li><li><a href="${CONFIG.social.pinterest}" target="_blank" rel="noopener">Pinterest</a></li></ul></div>
       </div>
-      <div class="foot-bottom"><span>© 2026 ${CONFIG.brand}. Concept project.</span><span>Privacy · Terms</span></div>
+      <div class="foot-bottom"><span>© 2026 ${CONFIG.brand} · ${CONFIG.tagline}. Concept project.</span><span><a href="${CONFIG.policyBase}/store-policy" target="_blank" rel="noopener">Privacy</a> · <a href="${CONFIG.policyBase}/terms-conditions" target="_blank" rel="noopener">Terms</a></span></div>
     </div></footer>`);
   const nl=$('#navLinks'), mb=$('#menuBtn'), mt=$('#menuTxt');
   const setMenu=o=>{ nl.classList.toggle('open',o); mb.setAttribute('aria-expanded',o); mt.textContent=o?'Close':'Menu'; };
@@ -126,7 +136,7 @@ function cardHTML(p){
       <span class="quick">View product</span>
     </div>
     <div class="card-info">
-      <div><div class="nm">${p.name}</div><div class="cl">${p.cat} · ${p.colors.length} colours</div></div>
+      <div><div class="nm">${p.name}</div><div class="cl">${p.cat}</div></div>
       <div class="price">${p.was?`<s>${money(p.was)}</s>`:''}${money(p.price)}</div>
     </div></a>`;
 }
@@ -145,46 +155,46 @@ Views.home = () => ({
   html: `
 <section class="hero">
   <div class="hero-copy">
-    <span class="label">Collection 01 · Lorem</span>
-    <h1>Lorem<br>ipsum<br>dolor.</h1>
+    <span class="label">Design &amp; Fashion · Collection 01</span>
+    <h1>Minimalism<br>maximized.</h1>
     <div class="hero-bottom">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <p>Where minimalism meets timeless elegance. Heavyweight oversized tees and minimal hoodies, made for those who appreciate the beauty of simplicity.</p>
       <a class="btn" href="#shop">Shop all →</a>
     </div>
   </div>
   <div class="hero-media">
     <div class="ph dark" data-label="Hero image"></div>
-    <span class="hero-tag label">New season</span>
+    <span class="hero-tag label">Design &amp; Fashion</span>
   </div>
 </section>
 
 <div class="marquee"><div class="marquee-track">
-  <span>Lorem ipsum</span><span>—</span><span>Dolor sit amet</span><span>—</span><span>Consectetur</span><span>—</span><span>Adipiscing elit</span><span>—</span>
-  <span>Lorem ipsum</span><span>—</span><span>Dolor sit amet</span><span>—</span><span>Consectetur</span><span>—</span><span>Adipiscing elit</span><span>—</span>
+  <span>Design &amp; Fashion</span><span>—</span><span>Minimalism maximized</span><span>—</span><span>Oversized tees</span><span>—</span><span>Minimal hoodies</span><span>—</span>
+  <span>Design &amp; Fashion</span><span>—</span><span>Minimalism maximized</span><span>—</span><span>Oversized tees</span><span>—</span><span>Minimal hoodies</span><span>—</span>
 </div></div>
 
 <section class="section"><div class="wrap">
-  <div class="sec-head rv"><h2>Shop by category</h2><a class="link-u" href="#shop">View all</a></div>
+  <div class="sec-head rv"><h2>Shop by collection</h2><a class="link-u" href="#shop">View all</a></div>
   <div class="cats rv">
-    <a class="cat" href="#shop-topwear"><div class="ph r-45 s1"></div><div class="cat-name"><b>Topwear</b><span>→</span></div></a>
-    <a class="cat" href="#shop-bottomwear"><div class="ph r-45 s3"></div><div class="cat-name"><b>Bottomwear</b><span>→</span></div></a>
-    <a class="cat" href="#shop-outerwear"><div class="ph r-45 s2"></div><div class="cat-name"><b>Outerwear</b><span>→</span></div></a>
+    <a class="cat" href="#shop-solids"><div class="ph r-45 s1"></div><div class="cat-name"><b>Oversized Solids</b><span>→</span></div></a>
+    <a class="cat" href="#shop-imprinted"><div class="ph r-45 s3"></div><div class="cat-name"><b>Imprinted Oversized</b><span>→</span></div></a>
+    <a class="cat" href="#shop-hoodies"><div class="ph r-45 s2"></div><div class="cat-name"><b>Minimal Hoodies</b><span>→</span></div></a>
   </div>
 </div></section>
 
 <section class="section" style="padding-top:0"><div class="wrap">
-  <div class="sec-head rv"><div><span class="label muted">Featured</span><h2>New arrivals</h2></div><a class="link-u" href="#shop">Shop all</a></div>
-  <div class="grid rv">${PRODUCTS.slice(0,4).map(cardHTML).join('')}</div>
+  <div class="sec-head rv"><div><span class="label muted">Featured</span><h2>Start here</h2></div><a class="link-u" href="#shop">Shop all</a></div>
+  <div class="grid rv">${[1,5,9,6].map(i=>cardHTML(byId(i))).join('')}</div>
 </div></section>
 
 <section class="statement"><div class="wrap section">
-  <div class="rv"><span class="label" style="color:#8a8a8a">Our idea</span><h2 style="margin-top:14px">Lorem ipsum, quietly made.</h2></div>
-  <div class="rv"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-  <a class="btn light" href="#shop">Explore</a></div>
+  <div class="rv"><span class="label" style="color:#8a8a8a">Our idea</span><h2 style="margin-top:14px">Simplicity is the ultimate sophistication.</h2></div>
+  <div class="rv"><p>We embrace clean lines, understated design and high-quality craftsmanship to create wardrobe essentials that effortlessly elevate minimal style.</p>
+  <a class="btn light" href="#about">About Subtl</a></div>
 </div></section>
 
 <section class="section"><div class="wrap">
-  <div class="sec-head rv"><h2>Lookbook</h2><span class="label muted">Lorem 01 — 03</span></div>
+  <div class="sec-head rv"><h2>Lookbook</h2><span class="label muted">01 — 03</span></div>
   <div class="split rv">
     <div class="ph r-tall s2" data-label="Look 01"></div>
     <div class="ph r-tall s3" data-label="Look 02"></div>
@@ -193,37 +203,27 @@ Views.home = () => ({
 </div></section>
 
 <section class="section" style="padding-top:0"><div class="wrap">
-  <div class="sec-head rv"><div><span class="label muted">Limited</span><h2>On sale</h2></div><a class="link-u" href="#shop-sale">Shop sale</a></div>
-  <div class="grid rv">${PRODUCTS.filter(p=>p.was).concat(PRODUCTS.filter(p=>!p.was).slice(0,1)).slice(0,4).map(cardHTML).join('')}</div>
+  <div class="sec-head rv"><div><span class="label muted">400 GSM fleece</span><h2>Minimal hoodies</h2></div><a class="link-u" href="#shop-hoodies">Shop hoodies</a></div>
+  <div class="grid rv">${PRODUCTS.filter(p=>p.cat===CATS.hoodies).map(cardHTML).join('')}</div>
 </div></section>
 
 <div class="wrap rv"><div class="perks">
-  <div class="perk"><b>Lorem shipping</b><p>Dolor sit amet consectetur.</p></div>
-  <div class="perk"><b>Ipsum returns</b><p>Adipiscing elit sed do.</p></div>
-  <div class="perk"><b>Dolor quality</b><p>Eiusmod tempor incididunt.</p></div>
-  <div class="perk"><b>Amet support</b><p>Ut labore et dolore magna.</p></div>
+  <div class="perk"><b>Free shipping</b><p>Across India on orders above ₹799.</p></div>
+  <div class="perk"><b>7-day returns</b><p>Unused items with tags attached.</p></div>
+  <div class="perk"><b>Heavyweight fabric</b><p>210 GSM terry cotton, 400 GSM fleece.</p></div>
+  <div class="perk"><b>Support</b><p>${CONFIG.contact.email}</p></div>
 </div></div>
 
-<section class="section"><div class="wrap">
-  <div class="sec-head rv"><h2>Lorem from people</h2><span class="label muted">Reviews</span></div>
-  <div class="reviews rv">
-    <div class="review"><div class="stars">★★★★★</div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p><span class="label muted">Customer name</span></div>
-    <div class="review"><div class="stars">★★★★★</div><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p><span class="label muted">Customer name</span></div>
-    <div class="review"><div class="stars">★★★★★</div><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p><span class="label muted">Customer name</span></div>
-  </div>
-</div></section>
-
 <section class="news rv">
-  <span class="label muted">Newsletter</span>
-  <h2>Lorem ipsum dolor.</h2>
-  <p class="muted">Sit amet consectetur adipiscing elit.</p>
-  <form id="newsForm"><input id="newsEmail" type="email" placeholder="Enter your email" required aria-label="Email"><button type="submit">Subscribe</button></form>
-</section>`,
-  after(){ $('#newsForm').addEventListener('submit', e=>{ e.preventDefault(); e.target.reset(); toast('Subscribed (demo)'); }); }
+  <span class="label muted">Follow along</span>
+  <h2>Stay in the loop.</h2>
+  <p class="muted">New drops and behind-the-scenes from Subtl.</p>
+  <a class="btn" href="${CONFIG.social.instagram}" target="_blank" rel="noopener">Follow on Instagram</a>
+</section>`
 });
 
 Views.shop = ({cat}) => {
-  const label = cat==='__sale' ? 'Sale' : (cat || 'Shop all');
+  const label = cat || 'Shop all';
   const chip = (h,l,c) => `<a class="chip ${cat===c?'on':''}" data-cat="${c}" href="#${h}">${l}</a>`;
   return {
     html: `
@@ -233,7 +233,7 @@ Views.shop = ({cat}) => {
 </div></section>
 <section class="wrap" id="shopRoot" style="padding-top:28px;padding-bottom:clamp(50px,8vw,100px)">
   <div class="toolbar">
-    <div class="chips">${chip('shop','All','')}${chip('shop-topwear','Topwear','Topwear')}${chip('shop-bottomwear','Bottomwear','Bottomwear')}${chip('shop-outerwear','Outerwear','Outerwear')}${chip('shop-sale','Sale','__sale')}</div>
+    <div class="chips">${chip('shop','All','')}${Object.keys(CATS).map(k=>chip('shop-'+k, CATS[k], CATS[k])).join('')}</div>
     <div style="display:flex;gap:12px;align-items:center">
       <span class="label muted" id="count"></span>
 <div class="dd" id="sortDD">
@@ -254,20 +254,20 @@ Views.shop = ({cat}) => {
     after(){
       let cur = cat, still = false, sortVal = '';
       const draw = () => {
-        const list = PRODUCTS.filter(p => !cur ? true : cur==='__sale' ? !!p.was : p.cat===cur);
+        const list = PRODUCTS.filter(p => !cur ? true : p.cat===cur);
         const s = sortVal;
         if(s==='lo') list.sort((a,b)=>a.price-b.price);
         if(s==='hi') list.sort((a,b)=>b.price-a.price);
         if(s==='az') list.sort((a,b)=>a.name.localeCompare(b.name));
         $('#grid').classList.toggle('still', still);
-        $('#grid').innerHTML = list.length ? list.map(cardHTML).join('') : '<div class="empty" style="grid-column:1/-1">Lorem ipsum — nothing here yet.</div>';
+        $('#grid').innerHTML = list.length ? list.map(cardHTML).join('') : '<div class="empty" style="grid-column:1/-1">Nothing here yet.</div>';
         $('#count').textContent = list.length + ' items';
         still = true;   /* every redraw after the first one is instant */
       };
       /* filtering happens in place: no page slide, no card animation */
       _shop = { setCat(c){
         cur = c;
-        const label = c==='__sale' ? 'Sale' : (c || 'Shop all');
+        const label = c || 'Shop all';
         $('#shopTitle').textContent = label; $('#shopCrumb').textContent = label;
         $$('#shopRoot .chip, .page-title + section .chip').forEach(x => x.classList.toggle('on', x.dataset.cat===c));
         draw();
@@ -297,16 +297,16 @@ Views.product = ({id}) => {
   return {
     html: `
 <div class="wrap">
-  <div class="crumbs" style="padding-top:22px"><a href="#home">Home</a> / <a href="#shop-${p.cat.toLowerCase()}">${p.cat}</a> / <span>${p.name}</span></div>
+  <div class="crumbs" style="padding-top:22px"><a href="#home">Home</a> / <a href="#shop-${catSlug(p.cat)}">${p.cat}</a> / <span>${p.name}</span></div>
   <section class="pdp">
     <div class="gallery">${['Main','Detail 01','Detail 02'].map((l,i)=>`<div class="ph ${i?'r-45':''} ${p.tone}" data-label="${l}"></div>`).join('')}</div>
     <div class="pdp-info">
       <span class="label muted">${p.cat}</span>
       <h1>${p.name}</h1>
       <div class="pdp-price">${p.was?`<s class="muted" style="margin-right:8px">${money(p.was)}</s>`:''}${money(p.price)}</div>
-      <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <div class="opt"><div class="opt-head"><span class="label">Colour</span><span class="label muted" id="colorName">Colour 1</span></div>
-        <div class="swatches" id="swatches">${p.colors.map((c,i)=>`<button class="sw ${i?'':'on'}" data-i="${i}" style="background:${c}" aria-label="Colour ${i+1}"></button>`).join('')}</div></div>
+      <p class="muted">${p.desc}</p>
+      <div class="opt"><div class="opt-head"><span class="label">Colour</span><span class="label muted" id="colorName">${p.colors[0][0]}</span></div>
+        <div class="swatches" id="swatches">${p.colors.map((c,i)=>`<button class="sw ${i?'':'on'}" data-i="${i}" style="background:${c[1]}" aria-label="${c[0]}"></button>`).join('')}</div></div>
       <div class="opt"><div class="opt-head"><span class="label">Size</span><span class="label muted">Size guide</span></div>
         <div class="sizes" id="sizes">${['XS','S','M','L','XL'].map(s=>`<button class="size ${s==='M'?'on':''}">${s}</button>`).join('')}</div></div>
       <div class="buy">
@@ -315,9 +315,9 @@ Views.product = ({id}) => {
       </div>
       <a class="btn ghost block" href="#cart" style="margin-top:10px">Go to cart</a>
       <div class="acc">
-        <details open><summary>Description</summary><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p></details>
-        <details><summary>Fabric &amp; care</summary><p>Lorem ipsum 000% dolor. Sit amet, machine wash cold. Consectetur adipiscing.</p></details>
-        <details><summary>Shipping &amp; returns</summary><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p></details>
+        <details open><summary>Description</summary><p>${p.desc}</p></details>
+        <details><summary>Fabric &amp; fit</summary><p>${p.fab}</p></details>
+        <details><summary>Shipping &amp; returns</summary><p>Free shipping across India on orders above ₹799. Returns within 7 days of delivery for unused items with tags attached. <a href="#shipping" style="text-decoration:underline">Full policy</a></p></details>
       </div>
     </div>
   </section>
@@ -327,7 +327,7 @@ Views.product = ({id}) => {
     after(){
       let size='M', color=0, qty=1;
       $('#swatches').addEventListener('click', e=>{ const b=e.target.closest('.sw'); if(!b)return; color=+b.dataset.i;
-        $$('.sw').forEach(x=>x.classList.toggle('on',x===b)); $('#colorName').textContent='Colour '+(color+1); });
+        $$('.sw').forEach(x=>x.classList.toggle('on',x===b)); $('#colorName').textContent=p.colors[color][0]; });
       $('#sizes').addEventListener('click', e=>{ const b=e.target.closest('.size'); if(!b)return; size=b.textContent;
         $$('.size').forEach(x=>x.classList.toggle('on',x===b)); });
       $('#minus').onclick = ()=>{ qty=Math.max(1,qty-1); $('#qty').textContent=qty; };
@@ -369,7 +369,7 @@ Views.cart = () => ({
           <a href="#product-${p.id}" class="ph ${p.tone}"></a>
           <div>
             <a class="li-name" href="#product-${p.id}">${p.name}</a>
-            <div class="li-meta">Size ${i.size} · Colour ${i.color+1}</div>
+            <div class="li-meta">Size ${i.size} · ${p.colors[i.color][0]}</div>
             <div class="li-actions">
               <div class="qty"><button data-a="m" data-i="${idx}" aria-label="Decrease">−</button><span>${i.qty}</span><button data-a="p" data-i="${idx}" aria-label="Increase">+</button></div>
               <button class="rm" data-a="r" data-i="${idx}">Remove</button>
@@ -378,8 +378,8 @@ Views.cart = () => ({
           <div>${money(p.price*i.qty)}</div>
         </div>`; }).join('');
       const sub=Cart.subtotal(), sh=Cart.shipping();
-      $('#sub').textContent=money(sub); $('#ship').textContent = sh===0 ? 'Free' : money(sh); $('#tot').textContent=money(sub+sh);
-      $('#shipNote').textContent = sh===0 ? 'Lorem ipsum — you qualify for free shipping.' : `Add ${money(CONFIG.freeShipOver-sub)} more for free shipping.`;
+      $('#sub').textContent=money(sub); $('#ship').textContent = shipTxt(sh); $('#tot').textContent=money(sub+(sh||0));
+      $('#shipNote').textContent = sh===0 ? 'You qualify for free shipping across India.' : `Add ${money(CONFIG.freeShipOver-sub)} more for free shipping across India.`;
     };
     $('#items').addEventListener('click', e=>{
       const b=e.target.closest('button[data-a]'); if(!b) return;
@@ -414,21 +414,23 @@ Views.checkout = () => {
         <input name="addr" placeholder="Address" required>
         <input name="apt" placeholder="Apartment, suite (optional)">
         <div class="f two"><input name="city" placeholder="City" required><input name="pin" placeholder="PIN / ZIP" required></div>
-        <select name="country" aria-label="Country"><option>India</option><option>Lorem</option><option>Ipsum</option></select>
+        <select name="country" aria-label="Country"><option>India</option></select>
       </div></div>
     <div class="form-sec"><h3>Payment</h3>
-      <label class="pay"><input type="radio" name="pay" checked> <span>Card — lorem ipsum</span></label>
-      <label class="pay"><input type="radio" name="pay"> <span>UPI / wallet — dolor sit</span></label>
-      <label class="pay"><input type="radio" name="pay"> <span>Cash on delivery — amet</span></label>
+      <label class="pay"><input type="radio" name="pay" checked> <span>UPI</span></label>
+      <label class="pay"><input type="radio" name="pay"> <span>Google Pay</span></label>
+      <label class="pay"><input type="radio" name="pay"> <span>Credit / debit card</span></label>
+      <label class="pay"><input type="radio" name="pay"> <span>Net banking</span></label>
+      <label class="pay"><input type="radio" name="pay"> <span>PayPal</span></label>
       <p class="note">Demo only. No payment is processed.</p></div>
     <button class="btn block" type="submit">Place order</button>
   </form>
   <aside class="summary">
     <h3>Your order</h3>
-    ${c.map(i=>{ const p=byId(i.id); return `<div class="mini"><div class="ph ${p.tone}"></div><div>${p.name}<div class="muted" style="font-size:12px">Size ${i.size} · Qty ${i.qty}</div></div><div>${money(p.price*i.qty)}</div></div>`; }).join('')}
+    ${c.map(i=>{ const p=byId(i.id); return `<div class="mini"><div class="ph ${p.tone}"></div><div>${p.name}<div class="muted" style="font-size:12px">Size ${i.size} · ${p.colors[i.color][0]} · Qty ${i.qty}</div></div><div>${money(p.price*i.qty)}</div></div>`; }).join('')}
     <div class="row" style="border-top:1px solid var(--line);margin-top:10px"><span>Subtotal</span><span>${money(sub)}</span></div>
-    <div class="row"><span>Shipping</span><span>${sh?money(sh):'Free'}</span></div>
-    <div class="row total"><span>Total</span><span>${money(sub+sh)}</span></div>
+    <div class="row"><span>Shipping</span><span>${shipTxt(sh)}</span></div>
+    <div class="row total"><span>Total</span><span>${money(sub+(sh||0))}</span></div>
   </aside>
 </div></div>`,
     after(){
@@ -440,21 +442,55 @@ Views.checkout = () => {
         if(bad.length){ bad.forEach(i=>i.style.borderColor='#0a0a0a'); bad[0].focus(); toast('Please fill the required fields'); return; }
         const n = 'SB' + Math.floor(100000 + Math.random()*900000);
         Cart.clear();
-        swap({ html: `<div class="wrap"><div class="done"><span class="label muted">Order ${n}</span><h1>Thank you.</h1><p class="muted" style="margin-bottom:28px">Lorem ipsum dolor sit amet — this is a concept demo.</p><a class="btn" href="#home">Back to home</a></div></div>` }, 'Order placed');
+        swap({ html: `<div class="wrap"><div class="done"><span class="label muted">Order ${n}</span><h1>Thank you.</h1><p class="muted" style="margin-bottom:28px">Your order is noted. This is a concept demo, so nothing was charged and nothing will ship.</p><a class="btn" href="#home">Back to home</a></div></div>` }, 'Order placed');
       });
     }
   };
 };
 
 /* ======================= ROUTER + TRANSITIONS ======================= */
-const CATS = { topwear:'Topwear', bottomwear:'Bottomwear', outerwear:'Outerwear' };
+const INFO = {
+  about:    { t:'About', h:'Minimalism maximized.', rows:[
+    ['Who we are', 'Subtl — where minimalism meets timeless elegance. Design &amp; fashion for people who appreciate the beauty of simplicity in their wardrobe.'],
+    ['What we believe', 'Simplicity is the ultimate form of sophistication, and Subtl reflects that philosophy.'],
+    ['How we make', 'Clean lines, understated designs and high-quality craftsmanship, to create wardrobe essentials that effortlessly elevate minimal style.'],
+    ['What we make', 'Heavyweight oversized tees in solids and prints, and minimal hoodies in 400 GSM poly-cotton fleece.'] ] },
+  shipping: { t:'Shipping & returns', h:'Shipping &amp; returns.', rows:[
+    ['Where we ship', 'Currently within India only. More destinations are planned.'],
+    ['Processing', 'Orders ship within 7 to 10 business days after payment. Peak or promotional periods may take longer.'],
+    ['Delivery', 'Delivery time and method vary by location. Options and estimates are shown at checkout.'],
+    ['Shipping cost', 'Calculated at checkout based on destination and method. Free across India on orders above ₹799.'],
+    ['Tracking', 'A shipping confirmation email with a tracking number is sent once your order ships.'],
+    ['Taxes and duties', 'Any customs duties, taxes or import fees are the customer\'s responsibility, if applicable.'],
+    ['Returns', 'Start a return within 7 days of delivery for a full refund or an exchange. Items must be new and unused, with all tags and labels attached. Worn, washed or altered items are not eligible.'],
+    ['How to return', 'Contact us by phone or email with your order number and reason for return. You will receive a return label and instructions; return shipping is paid by you.'],
+    ['Refunds and exchanges', 'Refunds are processed within 10 business days of inspection, to the original payment method. Exchanges ship within 3 business days of receiving the returned item.'],
+    ['Lost or damaged', 'Contact customer support as soon as possible. Changes to an order are not always possible after it is placed.'] ] },
+  payments: { t:'Payment methods', h:'Payment methods.', rows:[
+    ['We accept', 'Google Pay, PayPal, credit card, debit card, UPI and net banking.'] ] },
+  contact:  { t:'Contact', h:'Get in touch.', rows:[
+    ['Email', '<a href="mailto:' + CONFIG.contact.email + '">' + CONFIG.contact.email + '</a>'],
+    ['Phone', CONFIG.contact.phone],
+    ['Address', CONFIG.contact.address],
+    ['Follow', '<a href="' + CONFIG.social.instagram + '" target="_blank" rel="noopener">Instagram</a> · <a href="' + CONFIG.social.x + '" target="_blank" rel="noopener">X</a> · <a href="' + CONFIG.social.pinterest + '" target="_blank" rel="noopener">Pinterest</a>'] ] }
+};
+Views.info = ({k}) => { const d = INFO[k]; return { html: `
+<section class="page-title"><div class="wrap">
+  <div class="crumbs"><a href="#home">Home</a> / ${d.t}</div>
+  <h1>${d.h}</h1>
+</div></section>
+<div class="wrap"><div class="info">${d.rows.map(r => `<div class="irow"><span class="label muted">${r[0]}</span><p>${r[1]}</p></div>`).join('')}</div></div>` }; };
+
+/* ======================= ROUTER + TRANSITIONS ======================= */
+const CATS = { solids:'Oversized Solids', imprinted:'Imprinted Oversized', hoodies:'Minimal Hoodies' };
+const catSlug = name => Object.keys(CATS).find(k => CATS[k]===name);
 function parse(){
   const h = location.hash.slice(1).toLowerCase();
-  if(!h || h==='home') return { v:'home' };
+  if(!h || h==='home' || h==='preview') return { v:'home' };
   if(h==='cart') return { v:'cart' };
   if(h==='checkout') return { v:'checkout' };
+  if(INFO[h]) return { v:'info', k:h };
   if(h==='shop') return { v:'shop', cat:'' };
-  if(h==='shop-sale') return { v:'shop', cat:'__sale' };
   if(h.startsWith('shop-') && CATS[h.slice(5)]) return { v:'shop', cat:CATS[h.slice(5)] };
   if(h.startsWith('product-')){ const id=parseInt(h.slice(8),10); if(byId(id)) return { v:'product', id }; }
   return { v:'home' };
@@ -462,8 +498,9 @@ function parse(){
 
 function labelFor(r){
   if(r.v==='home') return 'Home';
-  if(r.v==='shop') return r.cat==='__sale' ? 'Sale' : (r.cat || 'Shop all');
+  if(r.v==='shop') return r.cat || 'Shop all';
   if(r.v==='product') return byId(r.id).name;
+  if(r.v==='info') return INFO[r.k].t;
   return r.v==='cart' ? 'Cart' : 'Checkout';
 }
 
@@ -618,7 +655,7 @@ const Drawer = {
         <a href="#product-${p.id}" class="ph ${p.tone}" aria-label="${p.name}"></a>
         <div>
           <a class="li-name" href="#product-${p.id}">${p.name}</a>
-          <div class="li-meta">Size ${i.size} · Colour ${i.color+1}</div>
+          <div class="li-meta">Size ${i.size} · ${p.colors[i.color][0]}</div>
           <div class="li-actions">
             <div class="qty"><button data-a="m" data-i="${idx}" aria-label="Decrease">−</button><span>${i.qty}</span><button data-a="p" data-i="${idx}" aria-label="Increase">+</button></div>
             <button class="rm" data-a="r" data-i="${idx}">Remove</button>
@@ -629,8 +666,8 @@ const Drawer = {
     const sub = Cart.subtotal(), sh = Cart.shipping();
     $('#drFoot').innerHTML = `
       <div class="row"><span>Subtotal</span><span>${money(sub)}</span></div>
-      <div class="row"><span>Shipping</span><span>${sh===0 ? 'Free' : money(sh)}</span></div>
-      <div class="row total"><span>Total</span><span>${money(sub+sh)}</span></div>
+      <div class="row"><span>Shipping</span><span>${shipTxt(sh)}</span></div>
+      <div class="row total"><span>Total</span><span>${money(sub+(sh||0))}</span></div>
       <a class="btn block" href="#checkout">Checkout</a>
       <a class="btn ghost block" href="#cart">View cart</a>`;
   },
@@ -703,7 +740,7 @@ function ripples(){
 
 /* ---------- Coming soon page (shown instead of the store while CONFIG.comingSoon is true) ---------- */
 function comingSoon(){
-  const marq = Array.from({length:8}, () => '<span>Coming soon</span><span>—</span><span>Lorem ipsum</span><span>—</span>').join('');
+  const marq = Array.from({length:8}, () => '<span>Coming soon</span><span>—</span><span>Design &amp; Fashion</span><span>—</span><span>Minimalism maximized</span><span>—</span>').join('');
   $('#app').innerHTML = `
   <section class="cs">
     <header class="cs-bar"><div class="wrap cs-top">
@@ -712,32 +749,27 @@ function comingSoon(){
     </div></header>
 
     <div class="wrap cs-main">
-      <span class="label muted cs-fade">Collection 01 · Lorem</span>
+      <span class="label muted cs-fade">Design &amp; Fashion · Collection 01</span>
       <h1 class="cs-h"><span class="cs-line"><span>Coming</span></span><span class="cs-line"><span>soon.</span></span></h1>
       <div class="cs-row cs-fade">
-        <p class="cs-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <form class="cs-form" id="csForm" novalidate>
-          <label class="label" for="csEmail">Get notified at launch</label>
-          <div class="cs-field"><input id="csEmail" type="email" placeholder="Enter your email" autocomplete="email" required><button type="submit">Notify me</button></div>
-          <p class="cs-msg" id="csMsg" role="status" aria-live="polite"></p>
-        </form>
+        <p class="cs-copy">Where minimalism meets timeless elegance. Oversized solids, imprints and heavyweight hoodies, designed in ${CONFIG.contact.city}.</p>
+        <div class="cs-form">
+          <span class="label">Follow the launch</span>
+          <a class="btn block cs-ig" href="${CONFIG.social.instagram}" target="_blank" rel="noopener">Follow on Instagram</a>
+          <p class="cs-msg">Questions? <a href="mailto:${CONFIG.contact.email}">${CONFIG.contact.email}</a></p>
+        </div>
       </div>
     </div>
 
     <div class="marquee" aria-hidden="true"><div class="marquee-track">${marq}</div></div>
-    <footer class="wrap cs-foot"><span>© 2026 ${CONFIG.brand}. Concept project.</span><span>Instagram · Pinterest · YouTube</span></footer>
+    <footer class="wrap cs-foot"><span>© 2026 ${CONFIG.brand} · ${CONFIG.contact.city}</span><span><a href="${CONFIG.social.instagram}" target="_blank" rel="noopener">Instagram</a> · <a href="${CONFIG.social.x}" target="_blank" rel="noopener">X</a> · <a href="${CONFIG.social.pinterest}" target="_blank" rel="noopener">Pinterest</a></span></footer>
   </section>`;
-  $('#csForm').addEventListener('submit', e => {
-    e.preventDefault();
-    const i = $('#csEmail'), m = $('#csMsg');
-    if(!/^\S+@\S+\.\S+$/.test(i.value.trim())){ m.className = 'cs-msg err'; m.textContent = 'Enter a valid email address.'; i.focus(); return; }
-    i.value = ''; m.className = 'cs-msg ok'; m.textContent = 'You are on the list. This is a demo, so nothing is stored.';
-  });
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
   ripples();
-  if(CONFIG.comingSoon){ comingSoon(); intro(); return; }
+  const preview = location.hash === '#preview';       /* #preview opens the full store while Coming Soon is on */
+  if(CONFIG.comingSoon && !preview){ comingSoon(); intro(); return; }
   chrome(); dropdowns(); intro();
   window.addEventListener('hashchange', go);
   go();
